@@ -1,0 +1,42 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+MVCApp_Phase2
+</name>
+</assembly>
+<members>
+<member name="T:MVCApp_Phase2.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:MVCApp_Phase2.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:MVCApp_Phase2.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="M:MVCApp_Phase2.VisionServices.GetConnectionInfo(System.String,System.String,System.String)">
+ <summary>
+ returns the correct connection string for database and user info
+ </summary>
+ <param name="database"></param>
+ <param name="user"></param>
+ <param name="password"></param>
+ <returns></returns>
+</member>
+<member name="M:MVCApp_Phase2.VisionServices.GetConnectionInfo(System.String)">
+ <summary>
+ connection string with an already established session id
+ </summary>
+ <param name="sessionId"></param>
+ <returns></returns>
+</member>
+</members>
+</doc>
