@@ -1,0 +1,398 @@
+<?xml version="1.0"?>
+<xsd:schema xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xdv="http://deltek.vision.com/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://deltek.vision.com/XMLSchema" targetNamespace="http://deltek.vision.com/XMLSchema" elementFormDefault="qualified" id="DeltekVisionSchema">
+	<xsd:simpleType name="stringLen1">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="1"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="stringLen2">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="2"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="stringLen3">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="1"/>
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="stringLen7">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="7"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="stringLen8">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="8"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="stringLen10">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="10"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="stringLen11">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="11"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="stringLen12">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="12"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="stringLen13">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="13"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="stringLen14">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="14"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="stringLen15">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="15"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="stringLen20">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="20"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="stringLen24">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="24"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="stringLen25">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="25"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="stringLen30">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="30"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="stringLen32">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="32"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="stringLen40">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="40"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="stringLen44">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="44"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="stringLen50">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="50"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="stringLen70">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="70"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="stringLen80">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="80"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="stringLen100">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="100"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="stringLen255">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="255"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="stringLen500">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="500"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="recStatus">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="1"/>
+			<xsd:enumeration value="A"/>
+			<xsd:enumeration value="I"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="emRecStatus">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="1"/>
+			<xsd:enumeration value="A"/>
+			<xsd:enumeration value="I"/>
+			<xsd:enumeration value="T"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="prRecStatus">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="1"/>
+			<xsd:enumeration value="A"/>
+			<xsd:enumeration value="I"/>
+			<xsd:enumeration value="D"/>
+			<xsd:enumeration value="P"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+  <xsd:simpleType name="VisionTransStatus">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="1"/>
+      <xsd:enumeration value="N"/>
+      <xsd:enumeration value="S"/>
+      <xsd:enumeration value="A"/>
+      <xsd:enumeration value="J"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="transactType">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="10"/>
+			<xsd:enumeration value="INSERT"/>
+			<xsd:enumeration value="UPDATE"/>
+			<xsd:enumeration value="DELETE"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="visionFlag">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="1"/>
+			<xsd:enumeration value="0"/>
+			<xsd:enumeration value="1"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="visionCheckBox">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="1"/>
+			<xsd:enumeration value="N"/>
+			<xsd:enumeration value="Y"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="visionPostedNo">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="1"/>
+			<xsd:enumeration value="N"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="codeTableColVal">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="code"/>
+			<xsd:enumeration value="desc"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="guidKey">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="32"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="currencyExchangeRate">
+		<xsd:restriction base="xsd:decimal">
+			<xsd:maxInclusive value="999999999.9999999999"/>
+			<xsd:fractionDigits value="10"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="visionCurrencyExchangeOverrideMethod">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="1"/>
+			<xsd:enumeration value="N"/>
+			<xsd:enumeration value="D"/>
+			<xsd:enumeration value="R"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:element name="RECS">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="REC" maxOccurs="unbounded">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="exControl">
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element name="ROW">
+											<xsd:complexType>
+												<xsd:sequence>
+													<xsd:element name="Batch" type="xdv:stringLen30" nillable="false"/>
+													<xsd:element name="Recurring" type="xdv:visionCheckBox" minOccurs="0"/>
+													<xsd:element name="Posted" type="xdv:visionPostedNo" minOccurs="0"/>
+													<xsd:element name="Creator" type="xdv:stringLen20" nillable="true"/>
+													<xsd:element name="Period" type="xsd:integer" nillable="false"/>
+													<xsd:element name="EndDate" type="xsd:dateTime" nillable="true"/>
+													<xsd:element name="Total" type="xsd:decimal" minOccurs="0"/>
+													<xsd:element name="PostPeriod" type="xsd:integer" minOccurs="0"/>
+													<xsd:element name="PostSeq" type="xsd:integer" minOccurs="0"/>
+                          <xsd:element name="AdvanceAmount" type="xsd:decimal" minOccurs="0"/>
+													<xsd:element name="Company" type="xdv:stringLen14" nillable="false" minOccurs="0"/>
+													<xsd:element name="DefaultCurrencyCode" type="xdv:stringLen3" nillable="false"/>
+                          <xsd:element name="SubmittedBy" type="xdv:stringLen20" minOccurs="0" nillable="true"/>
+                          <xsd:element name="SubmittedDate" type="xsd:dateTime" minOccurs="0" nillable="true" default="1900-01-01T00:00:00"/>
+													<xsd:element name="Diary" type="xdv:stringLen10" minOccurs="0" nillable="true"/>
+                        </xsd:sequence>
+												<xsd:attribute name="tranType" type="xdv:transactType" use="required"/>
+											</xsd:complexType>
+										</xsd:element>
+									</xsd:sequence>
+									<xsd:attribute name="name" type="xsd:string" use="required" fixed="exControl"/>
+									<xsd:attribute name="alias" type="xsd:string" use="required" fixed="exControl"/>
+									<xsd:attribute name="keys" type="xsd:string" use="required" fixed="Batch"/>
+								</xsd:complexType>
+								<xsd:unique name="exControlPK">
+									<xsd:selector xpath="xdv:ROW"/>
+									<xsd:field xpath="Batch"/>
+								</xsd:unique>
+							</xsd:element>
+
+							<xsd:element name="exControlDefaultTaxCodes" minOccurs="0">
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element name="ROW" minOccurs="0" maxOccurs="unbounded">
+											<xsd:complexType>
+												<xsd:sequence>
+													<xsd:element name="Batch" type="xdv:stringLen30" minOccurs="0" nillable="false"/>
+													<xsd:element name="TaxCode" type="xdv:stringLen10" minOccurs="0" nillable="false"/>
+													<xsd:element name="Seq" type="xsd:integer" minOccurs="0"/>
+												</xsd:sequence>
+												<xsd:attribute name="tranType" type="xdv:transactType" use="required"/>
+											</xsd:complexType>
+										</xsd:element>
+									</xsd:sequence>
+									<xsd:attribute name="name" type="xsd:string" use="required" fixed="exControlDefaultTaxCodes"/>
+									<xsd:attribute name="alias" type="xsd:string" use="required" fixed="exControlDefaultTaxCodes"/>
+									<xsd:attribute name="keys" type="xsd:string" use="required" fixed="Batch,TaxCode"/>
+								</xsd:complexType>
+								<xsd:unique name="exControlDefaultTaxCodesPK">
+									<xsd:selector xpath="xdv:ROW"/>
+									<xsd:field xpath="Batch"/>
+									<xsd:field xpath="TaxCode"/>
+								</xsd:unique>
+							</xsd:element>
+
+							<xsd:element name="exMaster">
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element name="ROW" maxOccurs="unbounded">
+											<xsd:complexType>
+												<xsd:sequence>
+													<xsd:element name="Batch" type="xdv:stringLen30" nillable="false"/>
+													<xsd:element name="MasterPKey" type="xdv:stringLen32" nillable="false"/>
+													<xsd:element name="Employee" type="xdv:stringLen20" nillable="false"/>
+													<xsd:element name="ReportDate" type="xsd:dateTime" nillable="false"/>
+													<xsd:element name="ReportName" type="xdv:stringLen40" nillable="false"/>
+													<xsd:element name="Posted" type="xdv:visionPostedNo" minOccurs="0"/>
+													<xsd:element name="Seq" type="xsd:integer" minOccurs="0"/>
+													<xsd:element name="AdvanceAmount" type="xsd:decimal" minOccurs="0"/>
+													<xsd:element name="BarCode" type="xdv:stringLen20" nillable="true"/>
+													<xsd:element name="DefaultCurrencyCode" type="xdv:stringLen3" nillable="false"/>
+													<xsd:element name="PaymentExchangeOverrideMethod" type="xdv:visionCurrencyExchangeOverrideMethod" minOccurs="0"/>
+													<xsd:element name="PaymentExchangeOverrideDate" type="xsd:dateTime" minOccurs="0" nillable="true" default="1900-01-01T00:00:00"/>
+													<xsd:element name="PaymentExchangeOverrideRate" type="xdv:currencyExchangeRate" minOccurs="0"/>
+													<xsd:element name="CurrencyExchangeOverrideMethod" type="xdv:visionCurrencyExchangeOverrideMethod" minOccurs="0"/>
+													<xsd:element name="CurrencyExchangeOverrideDate" type="xsd:dateTime" minOccurs="0" nillable="true" default="1900-01-01T00:00:00"/>
+													<xsd:element name="CurrencyExchangeOverrideRate" type="xdv:currencyExchangeRate" minOccurs="0"/>
+                          <xsd:element name="Status" type="xdv:VisionTransStatus" minOccurs="0" nillable="true"/>
+                          <xsd:element name="AuthorizedBy" type="xdv:stringLen20" minOccurs="0" nillable="true"/>
+                          <xsd:element name="RejectReason" type="xdv:stringLen500" minOccurs="0" nillable="true"/>
+                          <xsd:element name="ModUser" type="xdv:stringLen20" minOccurs="0" nillable="true"/>
+                          <xsd:element name="ModDate" type="xsd:dateTime" minOccurs="0" nillable="true" default="1900-01-01T00:00:00"/>
+                        </xsd:sequence>
+												<xsd:attribute name="tranType" type="xdv:transactType" use="required"/>
+											</xsd:complexType>
+										</xsd:element>
+									</xsd:sequence>
+									<xsd:attribute name="name" type="xsd:string" use="required" fixed="exMaster"/>
+									<xsd:attribute name="alias" type="xsd:string" use="required" fixed="exMaster"/>
+									<xsd:attribute name="keys" type="xsd:string" use="required" fixed="Batch,Employee"/>
+								</xsd:complexType>
+								<xsd:unique name="exMasterPK">
+									<xsd:selector xpath="xdv:ROW"/>
+									<xsd:field xpath="Batch"/>
+									<xsd:field xpath="Employee"/>
+								</xsd:unique>
+							</xsd:element>
+							<xsd:element name="exDetail">
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element name="ROW" maxOccurs="unbounded">
+											<xsd:complexType>
+												<xsd:sequence>
+													<xsd:element name="Batch" type="xdv:stringLen30" nillable="false"/>
+													<xsd:element name="MasterPKey" type="xdv:stringLen32" nillable="false"/>
+													<xsd:element name="PKey" type="xdv:stringLen44" nillable="false"/>
+													<xsd:element name="Seq" type="xsd:integer" minOccurs="0"/>
+													<xsd:element name="TransDate" type="xsd:dateTime" nillable="false"/>
+													<xsd:element name="WBS1" type="xdv:stringLen30" nillable="false"/>
+													<xsd:element name="WBS2" type="xdv:stringLen7" nillable="false"/>
+													<xsd:element name="WBS3" type="xdv:stringLen7" nillable="false"/>
+													<xsd:element name="Account" type="xdv:stringLen13" nillable="false"/>
+													<xsd:element name="Amount" type="xsd:decimal" minOccurs="0"/>
+													<xsd:element name="Description" type="xdv:stringLen40" nillable="true"/>
+													<xsd:element name="SuppressBill" type="xdv:visionCheckBox" minOccurs="0"/>
+													<xsd:element name="NetAmount" type="xsd:decimal" minOccurs="0"/>
+													<xsd:element name="PaymentExchangeRate" type="xdv:currencyExchangeRate" minOccurs="0"/>
+													<xsd:element name="PaymentAmount" type="xsd:decimal" minOccurs="0"/>
+													<xsd:element name="PaymentExchangeInfo" type="xsd:string" nillable="true"/>
+													<xsd:element name="CurrencyExchangeOverrideRate" type="xdv:currencyExchangeRate" minOccurs="0"/>
+													<xsd:element name="CurrencyCode" type="xdv:stringLen3" nillable="false"/>
+													<xsd:element name="OriginatingVendor" type="xdv:stringLen20" nillable="true"/>
+                        </xsd:sequence>
+												<xsd:attribute name="tranType" type="xdv:transactType" use="required"/>
+											</xsd:complexType>
+										</xsd:element>
+									</xsd:sequence>
+									<xsd:attribute name="name" type="xsd:string" use="required" fixed="exDetail"/>
+									<xsd:attribute name="alias" type="xsd:string" use="required" fixed="exDetail"/>
+									<xsd:attribute name="keys" type="xsd:string" use="required" fixed="Batch,MasterPKey,PKey"/>
+								</xsd:complexType>
+								<xsd:unique name="exDetailPK">
+									<xsd:selector xpath="xdv:ROW"/>
+									<xsd:field xpath="Batch"/>
+									<xsd:field xpath="MasterPKey"/>
+									<xsd:field xpath="PKey"/>
+								</xsd:unique>
+							</xsd:element>
+
+							<xsd:element name="exDetailTax" minOccurs="0">
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element name="ROW" minOccurs="0" maxOccurs="unbounded">
+											<xsd:complexType>
+												<xsd:sequence>
+													<xsd:element name="Batch" type="xdv:stringLen30" nillable="false"/>
+													<xsd:element name="MasterPKey" type="xdv:stringLen32" nillable="false"/>
+													<xsd:element name="PKey" type="xdv:stringLen44" nillable="false"/>
+													<xsd:element name="TaxCode" type="xdv:stringLen10" nillable="false"/>
+													<xsd:element name="TaxAmount" type="xsd:decimal" minOccurs="0"/>
+													<xsd:element name="CompoundOnTaxCode" type="xdv:stringLen10" nillable="true"/>
+													<xsd:element name="Seq" type="xsd:integer" minOccurs="0"/>
+												</xsd:sequence>
+												<xsd:attribute name="tranType" type="xdv:transactType" use="required"/>
+											</xsd:complexType>
+										</xsd:element>
+									</xsd:sequence>
+									<xsd:attribute name="name" type="xsd:string" use="required" fixed="exDetailTax"/>
+									<xsd:attribute name="alias" type="xsd:string" use="required" fixed="exDetailTax"/>
+									<xsd:attribute name="keys" type="xsd:string" use="required" fixed="Batch,MasterPKey,PKey,TaxCode"/>
+								</xsd:complexType>
+								<xsd:unique name="exDetailTaxPK">
+									<xsd:selector xpath="xdv:ROW"/>
+									<xsd:field xpath="Batch"/>
+									<xsd:field xpath="MasterPKey"/>
+									<xsd:field xpath="PKey"/>
+									<xsd:field xpath="TaxCode"/>
+								</xsd:unique>
+							</xsd:element>
+
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

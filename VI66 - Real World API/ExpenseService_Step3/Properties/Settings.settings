@@ -1,0 +1,27 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="ExpenseService.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="IntervalInSeconds" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">3600</Value>
+    </Setting>
+    <Setting Name="VisionWSUrl" Type="System.String" Scope="User">
+      <Value Profile="(Default)">http://localhost/vision76/visionws.asmx</Value>
+    </Setting>
+    <Setting Name="VisionUser" Type="System.String" Scope="User">
+      <Value Profile="(Default)">ADMIN</Value>
+    </Setting>
+    <Setting Name="VisionPassword" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="VisionDatabase" Type="System.String" Scope="User">
+      <Value Profile="(Default)">VisionDemo76</Value>
+    </Setting>
+    <Setting Name="ExportLocation" Type="System.String" Scope="User">
+      <Value Profile="(Default)">c:\temp</Value>
+    </Setting>
+    <Setting Name="AutoPost" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

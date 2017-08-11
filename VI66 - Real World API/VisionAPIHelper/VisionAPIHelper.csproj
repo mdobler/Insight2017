@@ -1,0 +1,626 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1CBD07B3-C2AB-46BB-AF90-E872AB533D16}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>VisionAPIHelper</RootNamespace>
+    <AssemblyName>VisionAPIHelper</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DelegateDecompiler, Version=1.0.0.0, Culture=neutral, PublicKeyToken=93b26a10a04705bd, processorArchitecture=MSIL">
+      <HintPath>..\packages\DelegateDecompiler.0.23.0\lib\net40-client\DelegateDecompiler.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Reflection, Version=1.1.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
+      <HintPath>..\packages\Mono.Reflection.1.1.0.0\lib\Mono.Reflection.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.4.4.4\lib\net45\NLog.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="HelperBase.cs" />
+    <Compile Include="PickListEnum.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RecordDetail.cs" />
+    <Compile Include="RecordStructure.cs" />
+    <Compile Include="RecordStructureExtensions.cs" />
+    <Compile Include="Service References\VisionAPI\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="TransactionType.cs" />
+    <Compile Include="VisionAPIRepository.cs" />
+    <Compile Include="VisionInfoCenters.cs" />
+    <Compile Include="VisionKey.cs" />
+    <Compile Include="VisionMessage.cs" />
+    <Compile Include="VisionWorkflowMessage.cs" />
+    <Compile Include="XElementExtensions.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <Content Include="NLog.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="NLog.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.AddActivityResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.AddAPDisbursementsTransactionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.AddAPVouchersTransactionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.AddCampaignResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.AddCashDisbTransactionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.AddCashReceiptsTransactionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.AddClientResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.AddContactResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.AddEmpExpenseTransactionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.AddEmployeeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.AddEmpRepaymentTransactionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.AddInvoiceTransactionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.AddJournalEntryTransactionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.AddLaborAdjustTransactionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.AddLeadResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.AddMiscTransactionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.AddOpportunityResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.AddPrintsReproTransactionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.AddProjectResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.AddTextLibraryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.AddTimesheetTransactionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.AddToPickListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.AddUDICResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.AddUnitByProjectTransactionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.AddUnitTransactionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.AddVendorResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.Custom_TimesheetValidationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.DeleteActivityResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.DeleteAPDisbursementsTransactionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.DeleteAPVouchersTransactionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.DeleteCampaignResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.DeleteCashDisbTransactionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.DeleteCashReceiptsTransactionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.DeleteClientResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.DeleteContactResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.DeleteEmpExpenseTransactionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.DeleteEmployeeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.DeleteEmpRepaymentTransactionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.DeleteInvoiceTransactionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.DeleteJournalEntryTransactionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.DeleteLaborAdjustTransactionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.DeleteLeadResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.DeleteMiscTransactionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.DeleteOpportunityResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.DeletePrintsReproTransactionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.DeleteProjectResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.DeleteRecordsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.DeleteTextLibraryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.DeleteTimesheetTransactionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.DeleteUDICResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.DeleteUnitByProjectTransactionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.DeleteUnitTransactionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.DeleteVendorResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.DownloadMetaDataFilesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.ExecuteStoredProcedureResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.GenerateCustomTabSchemaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.GetActivitiesByKeyResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.GetActivitiesByQueryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.GetCampaignsByKeyResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.GetCampaignsByQueryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.GetClientsByKeyResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.GetClientsByQueryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.GetCMConnectorConfigResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.GetCMOCompatabilityInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.GetContactsByKeyResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.GetContactsByQueryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.GetCurrentUserInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.GetDatabasesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.GetEmployeesByKeyResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.GetEmployeesByQueryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.GetLeadsByKeyResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.GetLeadsByQueryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.GetOpportunitiesByKeyResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.GetOpportunitiesByQueryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.GetPickListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.GetProjectsByKeyResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.GetProjectsByQueryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.GetRecordsByGUIDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.GetRecordsByKeyDeepResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.GetRecordsByKeyResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.GetRecordsByQueryDeepResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.GetRecordsByQueryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.GetSchemaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.GetSystemInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.GetTextLibrariesByKeyResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.GetTextLibrariesByQueryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.GetTransactionByKeyResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.GetTransactionByQueryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.GetUDICByKeyResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.GetUDICByQueryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.GetVendorsByKeyResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.GetVendorsByQueryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.MyTestResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.PostTransactionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.SendDataToDeltekVisionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.SendDataToDeltekVisionWithReturnResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.Timekeeper_CopyTimesheetResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.Timekeeper_DeleteTimesheetResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.Timekeeper_GetConfigurationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.Timekeeper_GetLoginUserInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.Timekeeper_GetPeriodsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.Timekeeper_GetProjectsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.Timekeeper_GetTimesheetResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.TransformXmlResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.UpdateActivityResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.UpdateAPDisbursementsTransactionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.UpdateAPVouchersTransactionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.UpdateCampaignResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.UpdateCashDisbTransactionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.UpdateCashReceiptsTransactionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.UpdateClientResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.UpdateContactResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.UpdateEmpExpenseTransactionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.UpdateEmployeeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.UpdateEmpRepaymentTransactionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.UpdateInvoiceTransactionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.UpdateJournalEntryTransactionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.UpdateLaborAdjustTransactionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.UpdateLeadResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.UpdateMiscTransactionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.UpdateOpportunityResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.UpdatePickListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.UpdatePrintsReproTransactionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.UpdateProjectResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.UpdateTextLibraryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.UpdateTimesheetTransactionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.UpdateUDICResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.UpdateUnitByProjectTransactionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.UpdateUnitTransactionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.UpdateVendorResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.ValidateLoginResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.WebServiceTestResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.WSTest_AddClientsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.WSTest_AddEmployeeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.WSTest_AddJETransResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.WSTest_AddLeadsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.WSTest_AddOpportunityResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.WSTest_AddProjectsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.WSTest_AddRecResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.WSTest_AddUnitsByProjectResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.WSTest_AddVendorResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.WSTest_AddVouchersResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.WSTest_APDisbursementsInsertResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.WSTest_APDisbursementsUpdateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.WSTest_APVouchersInsertResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.WSTest_APVouchersUpdateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.WSTest_CashReceiptsInsertResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.WSTest_DeleteLeadResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.WSTest_DeleteVouchersResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.WSTest_ErrorAndReturnDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.WSTest_GetRecordsByKeyResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.WSTest_GetRecordsByQueryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.WSTest_GetSchemaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.WSTest_GetTransactionByKeyResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.WSTest_JCAllResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.WSTest_PostVouchersResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.WSTest_SendDataToDeltekVisionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.WSTest_SendDataToDeltekVision_ProjectsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.WSTest_SuccessCallResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.WSTest_TGFixesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.WSTest_TransactionByQueryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.WSTest_UpdateClientsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.WSTest_UpdateCustomTabSchemaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.WSTest_UpdateEmployeeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.WSTest_UpdateLeadResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.WSTest_UpdateOpportunityResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.WSTest_UpdateProjectsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.WSTest_UpdateUnitsByProjectResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.WSTest_UpdateVendorResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\VisionAPIHelper.VisionAPI.WSTest_WarningAndReturnDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VisionAPI\visionws.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\VisionAPI\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\VisionAPI\visionws.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\VisionAPI\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\VisionAPI\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\VisionAPI\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
